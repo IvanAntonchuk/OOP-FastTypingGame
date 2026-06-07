@@ -11,6 +11,7 @@ qt_add_executable(FastTypingGame
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    gameengine.h gameengine.cpp
 )
 
 target_link_libraries(FastTypingGame
