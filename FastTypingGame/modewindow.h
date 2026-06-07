@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include "gamewindow.h"
 
 namespace Ui {
 class ModeWindow;
@@ -18,8 +19,12 @@ public:
 
     QPushButton* getBackButton() const;
 
+private slots:
+    void openGameWindow();
+
 private:
     Ui::ModeWindow *ui;
+    GameWindow *gameWindow;
 };
 
 #endif

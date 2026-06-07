@@ -7,6 +7,8 @@ ModeWindow::ModeWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Select Game Mode");
+
+    connect(ui->btnClassic, &QPushButton::clicked, this, &ModeWindow::openGameWindow);
 }
 
 ModeWindow::~ModeWindow()
@@ -16,4 +18,15 @@ ModeWindow::~ModeWindow()
 
 QPushButton* ModeWindow::getBackButton() const {
     return ui->btnBack;
+}
+
+void ModeWindow::openGameWindow() {
+    gameWindow = new GameWindow();
+
+    connect(gameWindow, &GameWindow::destroyed, this, [this]() {
+        this->show();
+    });
+
+    gameWindow->show();
+    this->hide();
 }
