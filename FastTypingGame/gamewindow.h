@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QStringList>
 #include "GameEngine.h"
+#include "resultwindow.h"
 
 namespace Ui {
 class GameWindow;
@@ -22,16 +23,24 @@ private slots:
     void updateTimer();
     void handleInput(const QString &text);
     void endGame();
+    void startCountdown();
+    void startGame();
+    void onBackClicked();
+    void resetGame();
 
 private:
     void renderText(const QString &currentInput);
+    void loadRandomText();
 
     Ui::GameWindow *ui;
     GameEngine engine;
     QTimer *gameTimer;
     int timeLeft;
+    bool isPlaying;
     QStringList wordsList;
     int currentWordIndex;
+    ResultWindow *resWindow;
+    QStringList textPool;
 };
 
 #endif

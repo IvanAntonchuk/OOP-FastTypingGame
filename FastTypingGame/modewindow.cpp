@@ -6,6 +6,7 @@ ModeWindow::ModeWindow(QWidget *parent) :
     ui(new Ui::ModeWindow)
 {
     ui->setupUi(this);
+    this->setWindowState(Qt::WindowMaximized);
     this->setWindowTitle("Select Game Mode");
 
     connect(ui->btnClassic, &QPushButton::clicked, this, &ModeWindow::openGameWindow);

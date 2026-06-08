@@ -6,7 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Fast Typing Game - Kyiv");
+    this->setWindowState(Qt::WindowMaximized);
+    this->setWindowTitle("Fast Typing Game");
 
     connect(ui->btnEnglish, &QPushButton::clicked, this, &MainWindow::openModeWindow);
 }
